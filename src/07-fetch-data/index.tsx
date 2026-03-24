@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-const url = "https://www.course-api.com/react-tours-project";
-import { type Tour, tourSchema } from "./types";
+// import { useState, useEffect } from "react";
+// const url = "https://www.course-api.com/react-tours-project";
+// import { type Tour, tourSchema } from "./types";
 import { fetchTours } from "./types";
 import { useQuery } from "@tanstack/react-query";
 
