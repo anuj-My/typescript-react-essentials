@@ -1,10 +1,11 @@
-import Component from "./04-challenge";
+import ParentComponent from "./05-context";
 
 function App() {
   return (
     <main>
-      <Component type="advanced" name="peter" email="peter@parker.com" />
-      <Component type="basic" name="peter" />
+      {/* <Component type="advanced" name="peter" email="peter@parker.com" />
+      <Component type="basic" name="peter" /> */}
+      <ParentComponent />
     </main>
   );
 }
