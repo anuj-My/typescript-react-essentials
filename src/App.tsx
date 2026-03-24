@@ -1,11 +1,9 @@
-import Component from "./01-return";
+import Component from "./02-state";
 
 function App() {
   return (
     <main>
-      <Component name="peter" result={84}>
-        some content
-      </Component>
+      <Component />
     </main>
   );
 }
