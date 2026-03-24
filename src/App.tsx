@@ -1,9 +1,10 @@
-import Component from "./03-events";
+import Component from "./04-challenge";
 
 function App() {
   return (
     <main>
-      <Component />
+      <Component type="advanced" name="peter" email="peter@parker.com" />
+      <Component type="basic" name="peter" />
     </main>
   );
 }
