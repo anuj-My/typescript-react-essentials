@@ -9,7 +9,7 @@ type CounterState = {
   status: CounterStatus;
 };
 
-const initialState = {
+const initialState: CounterState = {
   count: 0,
   status: "pending",
 };
