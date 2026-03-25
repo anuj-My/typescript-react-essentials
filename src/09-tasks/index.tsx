@@ -1,22 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { type Task } from "./type";
 import Form from "./Form";
 import List from "./List";
 
-// const getTaskFromStorage = () => {
-//   let getStorage = localStorage.getItem("tasks");
+const loadTasks = () => {
+  let storedTasks = localStorage.getItem("tasks");
+  return storedTasks ? JSON.parse(storedTasks) : [];
+};
 
-//   if (getStorage) {
-//     getStorage = JSON.parse(getStorage);
-//   } else {
-//     getStorage = [];
-//   }
-
-//   return getStorage;
-// };
+function updatedStorage(tasks: Task[]): void {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
 const Component = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(() => loadTasks());
 
   const addTask = (newTasks: Task): void => {
     setTasks([...tasks, newTasks]);
@@ -32,6 +29,11 @@ const Component = () => {
       }),
     );
   };
+
+  useEffect(() => {
+    updatedStorage(tasks);
+  }, [tasks]);
+
   return (
     <section>
       <Form addTask={addTask} />
